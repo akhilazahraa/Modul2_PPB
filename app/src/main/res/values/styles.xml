@@ -1,0 +1,17 @@
+<resources>
+    <!-- Definisikan tema kustom yang menurunkan dari Theme.AppCompat -->
+    <style name="Theme.Modul2_kel26" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!-- Gaya untuk Button -->
+    <style name="ButtonStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:fontFamily">@font/roboto_bold</item>
+        <item name="android:background">@drawable/bg_btn_blue</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+</resources>

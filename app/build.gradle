@@ -1,0 +1,66 @@
+plugins {
+    alias(libs.plugins.androidApplication)
+}
+
+android {
+    namespace 'com.example.modul2_kel26'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.example.modul2_kel26"
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    // Use this block to avoid any Kotlin dependencies
+    configurations.all {
+        resolutionStrategy {
+            force 'org.jetbrains.kotlin:kotlin-stdlib:1.8.22' // Force a specific version if needed
+            force 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.22'
+            force 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22'
+        }
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.3.1'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.1'
+    implementation libs.activity
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    // Exclude Kotlin from these dependencies to avoid conflicts
+    implementation('com.github.bumptech.glide:glide:4.12.0') {
+        exclude group: 'org.jetbrains.kotlin'
+    }
+    implementation('com.squareup.retrofit2:retrofit:2.9.0') {
+        exclude group: 'org.jetbrains.kotlin'
+    }
+    implementation('com.squareup.retrofit2:converter-gson:2.9.0') {
+        exclude group: 'org.jetbrains.kotlin'
+    }
+    implementation('com.squareup.okhttp3:okhttp:4.9.0') {
+        exclude group: 'org.jetbrains.kotlin'
+    }
+
+    implementation 'com.google.code.gson:gson:2.8.8'
+}
